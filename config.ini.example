@@ -1,0 +1,20 @@
+; config for sync (migration from old db data to new db)
+
+[ENV]
+; if the VERSION is not dev, api request will include auth
+VERSION = dev
+
+[SQL_SERVER_DB]
+DRIVER = {SQL SERVER}
+SERVER_IP = 192.168.x.xx
+DATABASE = TEST
+USERNAME = sa
+PASSWORD = pwd
+TABLE = gasoline
+
+[LINE_NOTIFY_API]
+API = https://notify-api.line.me/api/notify
+
+[LINE_PERSONAL_TOKEN]
+SELF = TOKEN_SELF
+FAMILY = TOKEN_FAMILY
