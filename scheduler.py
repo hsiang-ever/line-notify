@@ -2,9 +2,9 @@
 # -*- coding: UTF-8 -*-
 
 import schedule
-from sendAndSaveGasolineMsg import sendAndSaveGasolineMsg
+from GasolineWebsiteMsg import sendGasolineMsgToLine
 
-schedule.every().sunday.at("12:00").do(sendAndSaveGasolineMsg)
+schedule.every().sunday.at("12:30").do(sendGasolineMsgToLine)
 
 print('Scheduler In!')
 while True:
