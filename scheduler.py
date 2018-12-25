@@ -2,10 +2,10 @@
 # -*- coding: UTF-8 -*-
 
 import schedule
-from postGoogleAppsScript import scheduleJob
+from sendAndSaveGasolineMsg import sendAndSaveGasolineMsg
 
-schedule.every().sunday.at("6:00").do(scheduleJob)
+schedule.every().sunday.at("12:00").do(sendAndSaveGasolineMsg)
+
 print('Scheduler In!')
 while True:
 	schedule.run_pending()
-
