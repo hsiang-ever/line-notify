@@ -4,9 +4,10 @@
 import requests
 import json
 import configparser
+import os
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'config.ini'))
 
 def postLineNotifiy(payload):
 	r = requests.post(config['LINE_NOTIFY_API']['API'], data=payload, headers={"Authorization": "Bearer " + config['LINE_PERSONAL_TOKEN']['FAMILY']})
