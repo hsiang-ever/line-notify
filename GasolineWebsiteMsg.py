@@ -9,6 +9,7 @@ from postLineNotify import postLineNotifiy
 def getTaiwanOilPrice():
 	url = 'https://gas.goodlife.tw/'
 	r = requests.get(url)
+	r.encoding = 'utf-8'
 
 	# r.encoding='utf-8'
 	if r.status_code == requests.codes.ok:
@@ -18,6 +19,9 @@ def getTaiwanOilPrice():
 		# print(res.text)
 		updatedTime = soup.find_all(string=re.compile('最後更新時間'))
 		updatedTime = updatedTime[0].strip()[:-2]
+		# updatedTime = soup.find_all("p", class_="update")
+		# updatedTime = updatedTime[0].text.strip().split("(", 1)[0]
+		# print(updatedTime[0].text.strip().split("(", 1)[0])
 		print(updatedTime)
 		gasolineInfo['updatedTime'] = updatedTime
 
